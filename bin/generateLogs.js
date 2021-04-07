@@ -1,28 +1,4 @@
-const path = require('path')
-const fs = require('fs')
-const fsP = fs.promises
-const util = require('util')
-const rimraf = util.promisify(require('rimraf'))
-const minecraftWrap = require('minecraft-wrap')
-const MineflayerLog = require('../lib/mineflayer-log')
 
-const SERVER_DIRECTORY = path.resolve('server')
-const SERVER_PATH = path.join(SERVER_DIRECTORY, 'server.jar')
-const PACKET_DIRECTORY = path.resolve('packets')
-
-const downloadServer = util.promisify(minecraftWrap.download)
-
-/**
- * Stat stuff to see if it exists
- * @param {string} path
- */
-async function fileExists (path) {
-  try {
-    await fsP.stat(path)
-    return true
-  } catch (err) {
-    return false
-  }
 }
 
 (async function main () {
