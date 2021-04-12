@@ -3,3 +3,4 @@ module.exports = {
   PacketVerifier: require('./lib/packet-verifier.js'),
   Direction: require('./lib/common.js').Direction
 }
+  
